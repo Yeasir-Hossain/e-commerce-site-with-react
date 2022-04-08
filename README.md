@@ -1,3 +1,3 @@
 # emajhon shopping center
 
-## live link : warm-pasca-da7059.netlify.app/
+## live link : https://warm-pasca-da7059.netlify.app/
