@@ -4,7 +4,8 @@ import React from 'react';
 import './Reviewitem.css'
 
 const Reviewitem = (props) => {
-    const {name,img,price,shipping,quantity} = props.product;
+    const { product, handleRemoveproduct } = props;
+    const { name, img, price, shipping, quantity } = product;
     return (
         <div className='review-item'>
             <div>
@@ -13,17 +14,17 @@ const Reviewitem = (props) => {
             <div className='review-item-details-container'>
                 <div className="review-item-details">
                     <p className='product-name' title={name}>
-                        {name.length >20? name.slice(0,20)+'...': name}
-                        </p>
+                        {name.length > 20 ? name.slice(0, 20) + '...' : name}
+                    </p>
                     <p>Price: <span className='orange'>${price}</span></p>
                     <p><small>Shipping:${shipping}</small></p>
                     <p><small>Quantity: {quantity}</small></p>
                 </div>
                 <div className="delete-container">
-                    <button className='delete-button'>
-                    <FontAwesomeIcon className='delete-icon' icon={faTrashAlt}></FontAwesomeIcon>
+                    <button onClick={() => handleRemoveproduct(product)} className='delete-button'>
+                        <FontAwesomeIcon className='delete-icon' icon={faTrashAlt}></FontAwesomeIcon>
                     </button>
-                   
+
                 </div>
 
             </div>

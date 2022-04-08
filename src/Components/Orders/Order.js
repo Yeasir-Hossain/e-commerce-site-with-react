@@ -1,15 +1,18 @@
 import React from 'react';
 import useCart from '../../Hooks/useCart';
 import useProducts from '../../Hooks/useProducts';
+import { removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Reviewitem from '../Reviewitem/Reviewitem';
 import './Order'
 
 const Order = () => {
     const [products] = useProducts()
-    const [cart] = useCart(products);
+    const [cart, setCart] = useCart(products);
     const handleRemoveproduct = product => {
-        console.log("heda")
+        const rest = cart.filter(pd=> pd.id !==product.id);
+        setCart(rest)
+        removeFromDb(product.id)
     }
     return (
         <div className='shop-container'>
@@ -24,7 +27,8 @@ const Order = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart}>
+                </Cart>
             </div>
         </div>
     );
