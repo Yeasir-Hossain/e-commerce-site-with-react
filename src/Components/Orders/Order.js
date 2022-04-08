@@ -4,7 +4,7 @@ import useProducts from '../../Hooks/useProducts';
 import { removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Reviewitem from '../Reviewitem/Reviewitem';
-import './Order'
+import './Order.css'
 
 const Order = () => {
     const [products] = useProducts()
