@@ -59,7 +59,7 @@ const Shop = () => {
             <div className="cart-container">
                 <Cart cart ={cart}>
                 <Link to='/orders'>
-                    <button>Proceed to checkout</button>
+                    <button className='submit-btn'>Proceed to checkout</button>
                     </Link>
                 </Cart>
             </div>

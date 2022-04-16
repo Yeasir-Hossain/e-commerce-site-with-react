@@ -15,8 +15,6 @@ const Signup = () => {
     if(user){
         navigate('/shop');
     }
-
-
     const handleEmailBlur= event =>{
         setEmail(event.target.value);
     }
@@ -27,11 +25,12 @@ const Signup = () => {
         setConfirmpassword(event.target.value);
     }
     const handleCreateUser=event=>{
+        event.preventDefault();
         if(password!==confirmpassword){
             setError("Password doesn't match");
         }
         createUserWithEmailAndPassword(email ,password)
-
+      
     }
     return (
         <div className='form-container'>
